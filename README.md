@@ -1,8 +1,11 @@
 # Linuxサーバの構築
 
-## 環境情報
+## 〇環境情報
 
-私が行った環境情報は以下の通りです。
+<details>
+<summary>詳細</summary>
+
+私が行った環境情報は以下の通り。
 
 - **OS**: Ubuntu 24.10 LTS
 - **CPU**: Intel Core i5 1235U
@@ -26,8 +29,8 @@
 - **タイムゾーン**: Asia/Tokyo
 - **NTPサーバ**: ntp.ubuntu.com
 - **ファイアウォール**: UFW (Uncomplicated Firewall)
+</details>
 
-この環境情報を基に、各手順を実行してください。
 ## 〇目次
 [1. UbuntuOSのインストール](#1-ubuntuosのインストール)  
 [2. 初期設定](#2-初期設定)  
