@@ -8,19 +8,12 @@
 私が行った環境情報は以下の通り。
 
 - **OS**: Ubuntu 24.10 LTS
-- **CPU**: Intel Core i5 1235U
-- **メモリ**: 8GB
-- **ストレージ**: 256GB SSD
 - **ソフトウェア**:
-   - Apache HTTP Server 2.4
-   - Docker 20.10
-   - OpenSSH 8.4
-   - Vim 8.2
-   - Netplan 0.104
-   - UFW 0.36
-- **その他**:
-   - 日本語入力システム: fcitx-mozc
-   - ブラウザ: Firefox 93.0
+   - Apache HTTP Server 2.4.63
+   - Docker 27.4.1
+   - OpenSSH 9.9
+   - Vim 9.1
+   - UFW 0.36.2
 - **ネットワーク設定**:
    - IPアドレス: 192.168.1.100
    - サブネットマスク: 255.255.255.0
