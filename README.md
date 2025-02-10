@@ -12,7 +12,7 @@
 
 ## 1. UbuntuOSのインストール
 
-# 1.1 UbuntuのインストールUSBメディアを作成する
+### 1.1 UbuntuのインストールUSBメディアを作成する
 1. 下記リンクから、インストールイメージ:`ubuntu-ja-22.04-desktop-amd64.iso` をダウンロードする。
    - [Ubuntu日本語Remixダウンロードページ](https://www.ubuntulinux.jp/download/ja-remix)
 
@@ -22,7 +22,7 @@
 4. `スタート`をクリックし、ダウンロードが完了するとインストールメディアの作成は完了。
    - <img src="img/1.png" alt="代替テキスト" width="280" height="400" margin="margin-right: 10px;">
 
-# 1.2 OSのインストール手順
+### 1.2 OSのインストール手順
 1. `1.1`で作成したインストールUSBメディアを貸与PCに差し込む。
 2. 電源をつけながら`F2`キーを連打しバイオスを開く。
 3. 右端の`Boot Priority`で`UEFI`を一番上に配置して、`F10`キーで保存する。
@@ -39,14 +39,14 @@
 14. セットアップ画面では`次へ`→`次へ`→`次へ`→`続ける`を押して、完了する。
 
 ## 2. 初期設定
-# 2.1 Wi-Fiの初期接続方法
+### 2.1 Wi-Fiの初期接続方法
 1. 右上からネットワークを選択をクリックする。
 2. 任意のネットワークを指定し接続をクリックする。
 3. すると、`Wi-Fiネットワークの認証が必要です。`というウィンドウが表示される。
 4. 認証のプルダウンから`LEAP`を選択する。
 5. そして、ユーザー名とパスワードを入力して接続する。
 
-# 2.2. 全角日本語の入力方法
+### 2.2. 全角日本語の入力方法
 日本語入力ができない場合は、`fcitx-mozc`をインストールする必要がある。
 以下のコマンドを実行する。
 
@@ -57,7 +57,7 @@ sudo apt install -y fcitx-mozc
 そして、右上の`A`をクリックし、`日本語(Mozc)`を選択する。
 
 ## 3. 事前知識
-# 3.1 基礎コマンド
+### 3.1 基礎コマンド
 この実習でよく使用した順にコマンドを紹介する。
 - `cd`: ディレクトリを変更する
 - `ls`: ディレクトリの内容を一覧表示する
@@ -71,7 +71,7 @@ sudo apt install -y fcitx-mozc
 - `ps`: 実行中のプロセスを表示する
 - `kill`: プロセスを終了する
 
-# 3.2 Vimコマンド
+### 3.2 Vimコマンド
 この実習でよく使用した順にコマンドを紹介する。
 - `i`: 挿入モード
 - `:wq`: 保存して終了
@@ -81,7 +81,7 @@ sudo apt install -y fcitx-mozc
 - `yy`: 1行コピー
 - `p`: 貼り付け
 
-# 3.3 ファイルのアクセス権の変更手順
+### 3.3 ファイルのアクセス権の変更手順
 Linuxでは、ファイルやディレクトリには所有者とグループが設定され、それぞれに対してアクセス権限（パーミッション）が割り当てられる。パーミッションには、以下の3種類がある。
 
 - **r (読み取り権限)**: ファイルの内容を表示、ディレクトリ内のファイル一覧を表示する権限。
@@ -128,7 +128,7 @@ Linuxでは、ファイルやディレクトリには所有者とグループが
     ```
     これにより、グループを `group2` に変更。
 
-# 3.4 IPアドレスの固定化
+### 3.4 IPアドレスの固定化
 1. **設定ファイルの確認**  
    `/etc/netplan` ディレクトリ内に新しい`.yaml`ファイルを作成し、以下の内容を追加する。ファイル名は`01-netcfg.yaml`などが一般的である。
 
@@ -157,7 +157,7 @@ Linuxでは、ファイルやディレクトリには所有者とグループが
    `ip a` コマンドや `ping` コマンドを使用して、設定が正しく適用されているか確認する。
 
 ## 4. サーバー管理
-## 4.1 ユーザ管理
+### 4.1 ユーザ管理
 1. ユーザを新規追加する際は以下のコマンドを入力し、パスワードやユーザ情報を入力する。
 ```sh
 sudo adduser ユーザ名
@@ -183,7 +183,7 @@ su ユーザ名
 su または su -
 ```
 
-## 4.2 サービス管理
+### 4.2 サービス管理
 1. サービスの起動や停止などを管理するには`systemctl`コマンドを使用する。
 ```sh
 systemctl サブコマンド サービス名
@@ -199,7 +199,7 @@ systemctl サブコマンド サービス名
 - `status`: サービスの状態を確認する
 
 
-# 4.3 負荷状況の確認
+### 4.3 負荷状況の確認
 1. サーバの負荷を確認するためには`uptime`コマンドを使用する。
 1. ディスクの使用状況を確認するためには、`df`コマンドを使用する。
 ここで、`-h`オプションを追加することで、単位が見やすく表示される。
@@ -210,7 +210,7 @@ systemctl サブコマンド サービス名
 実行中のすべてのコマンドを確認する場合は`aux`オプションを追加する。
 1. `top`コマンドを使用することで、上記1~4の情報を3秒ごとにリアルタイムにモニタリングすることができる。
 
-# 4.4 スケジュール管理
+### 4.4 スケジュール管理
 
 Linuxサーバーでのスケジュール管理は、主に`cron`を使用して定期的なタスクを自動化することができる。
 
@@ -240,11 +240,11 @@ Linuxサーバーでのスケジュール管理は、主に`cron`を使用して
 0 2 * * * /path/to/backup.sh
 ```
 
-# 4.5 時刻管理
+### 4.5 時刻管理
 
 Linuxサーバーの時刻管理は、正確な時間を維持するために重要である。
 
-## `timedatectl`コマンド
+#### `timedatectl`コマンド
 
 - **時刻の表示**: 現在の時刻とタイムゾーンを表示する。
   ```sh
@@ -261,7 +261,7 @@ Linuxサーバーの時刻管理は、正確な時間を維持するために重
   sudo timedatectl set-ntp true
   ```
 
-## `ntp`の設定
+#### `ntp`の設定
 
 `ntp`サービスを使用して、時刻をより正確に同期することも可能。
 
@@ -279,14 +279,14 @@ Linuxサーバーの時刻管理は、正確な時間を維持するために重
    ```
 
 ## 5. Webサーバの構築
-# 5.1 Apache HTTP Server のインストール
+### 5.1 Apache HTTP Server のインストール
 Apache HTTP Serverをインストールするには、以下のコマンドを実行する。
 ```sh
 sudo apt update
 sudo apt -y install apache2
 ```
 
-# 5.2 Apache の起動
+### 5.2 Apache の起動
 Apacheを起動し、システム起動時に自動的に開始されるように設定する。
 ```sh
 sudo systemctl start apache2
@@ -295,7 +295,7 @@ sudo systemctl status apache2
 ```
 ブラウザで`http://localhost`にアクセスし、ウェルカムページが表示されればインストールは完了。
 
-# 5.3 Apacheの設定手順
+### 5.3 Apacheの設定手順
 1. インストールしたApacheの設定ファイルは、大きく分けて以下の2つである。
    - `/etc/apache2/apache2.conf`: サーバ全体に適用するグローバル設定ファイル
    - `/etc/apache2/sites-available/000-default.conf`: デフォルトの仮想ホスト設定ファイル
@@ -328,7 +328,7 @@ sudo systemctl status apache2
    sudo systemctl reload apache2
    ```
 
-# 5.4 ファイアウォールの設定手順
+### 5.4 ファイアウォールの設定手順
 
 Ubuntuでは、`ufw`（Uncomplicated Firewall）を使用してファイアウォールの設定を行う。
 
@@ -387,7 +387,7 @@ Ubuntuでは、`ufw`（Uncomplicated Firewall）を使用してファイアウ�
    ```
 
 
-# 5.5 Basic認証（パスワード認証）
+### 5.5 Basic認証（パスワード認証）
 1. 事前準備  
    基本認証を利用するには、`apache2-utils` が必要な場合がある。  
    ```sh
@@ -417,7 +417,7 @@ Ubuntuでは、`ufw`（Uncomplicated Firewall）を使用してファイアウ�
    sudo systemctl reload apache2
    ```
 
-# 5.6 アクセスログ
+### 5.6 アクセスログ
 1. ログの場所  
    Apache のアクセスログは通常 /var/log/apache2/access.log に出力される。
 
@@ -433,7 +433,7 @@ Ubuntuでは、`ufw`（Uncomplicated Firewall）を使用してファイアウ�
 
 ## 6. SSHによる認証
 
-# 6.1 SSHのインストール
+### 6.1 SSHのインストール
 SSHを使用するためには、まずSSHサーバーをインストールする必要がある。以下のコマンドを実行して、OpenSSHサーバーをインストールしする。
 
 ```sh
@@ -441,7 +441,7 @@ sudo apt update
 sudo apt install -y openssh-server
 ```
 
-# 6.2 SSHサーバーの起動と有効化
+### 6.2 SSHサーバーの起動と有効化
 SSHサーバーを起動し、システム起動時に自動的に開始されるように設定する。
 
 ```sh
@@ -450,14 +450,14 @@ sudo systemctl enable ssh
 sudo systemctl status ssh
 ```
 
-# 6.3 SSHクライアントの設定
+### 6.3 SSHクライアントの設定
 クライアント側では、SSHクライアントがインストールされている必要がある。ほとんどのLinuxディストリビューションにはプリインストールされているはずだが、インストールされていない場合は以下のコマンドを実行する。
 
 ```sh
 sudo apt install -y openssh-client
 ```
 
-# 6.4 SSHキーの生成
+### 6.4 SSHキーの生成
 SSHキーを生成して、公開鍵認証を設定する。以下のコマンドを実行して、SSHキーを生成できる。
 
 ```sh
@@ -470,14 +470,14 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ssh-copy-id username@server_ip_address
 ```
 
-# 6.5 SSH接続のテスト
+### 6.5 SSH接続のテスト
 設定が完了したら、SSH接続をテストしてください。以下のコマンドを実行して、サーバーに接続する。
 
 ```sh
 ssh username@server_ip_address
 ```
 
-# 6.6 SSH設定ファイルの編集
+### 6.6 SSH設定ファイルの編集
 SSHの設定ファイル（`/etc/ssh/sshd_config`）を編集して、セキュリティを強化できる。以下の設定を追加または変更する。
 
 ```plaintext
@@ -492,7 +492,7 @@ PubkeyAuthentication yes
 sudo systemctl restart ssh
 ```
 
-# 6.7 ファイアウォールの設定
+### 6.7 ファイアウォールの設定
 SSHポート（デフォルトでは22番）をファイアウォールで許可する。
 
 ```sh
@@ -501,7 +501,7 @@ sudo ufw enable
 sudo ufw status
 ```
 
-# 6.8 SSHの2段階認証
+### 6.8 SSHの2段階認証
 SSHの2段階認証を設定することで、セキュリティをさらに強化できる。Google Authenticatorなどのアプリを使用して、2段階認証を設定する。
 
 ```sh
@@ -534,7 +534,7 @@ sudo systemctl restart ssh
 
 Dockerを使用して、アプリケーションのコンテナ化を行い、効率的な開発・運用を実現する。
 
-# 7.1 Dockerのインストール
+### 7.1 Dockerのインストール
 まず、システムのパッケージリストを更新する。
 ```sh
 sudo apt update
@@ -548,14 +548,14 @@ sudo apt install docker.io
 docker --version
 ```
 
-# 7.2 Dockerサービスの起動と有効化
+### 7.2 Dockerサービスの起動と有効化
 ```sh
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo systemctl status docker
 ```
 
-# 7.3 Dockerの基本コマンド
+### 7.3 Dockerの基本コマンド
 
 Dockerの基本的なコマンドを以下に示す。
 
@@ -594,7 +594,7 @@ Dockerの基本的なコマンドを以下に示す。
    docker rmi イメージ名
    ```
 
-# 7.4 Docker Composeのインストール
+### 7.4 Docker Composeのインストール
 
 Docker Composeを使用すると、複数のコンテナを一括で管理できる。
 
@@ -613,7 +613,7 @@ Docker Composeを使用すると、複数のコンテナを一括で管理でき
     docker-compose --version
     ```
 
-# 7.5 Docker Composeの基本コマンド
+### 7.5 Docker Composeの基本コマンド
 
 - **コンテナの起動**:
    ```sh
@@ -635,7 +635,7 @@ Docker Composeを使用すると、複数のコンテナを一括で管理でき
    docker-compose logs
    ```
 
-# 7.6 Dockerfileの作成
+### 7.6 Dockerfileの作成
 
 Dockerfileを使用して、カスタムイメージを作成する。
 
@@ -657,7 +657,7 @@ Dockerfileを使用して、カスタムイメージを作成する。
     docker run -d -p 80:80 カスタムイメージ名
     ```
 
-# 7.7 Dockerのネットワーク設定
+### 7.7 Dockerのネットワーク設定
 
 Dockerのネットワークを設定して、コンテナ間の通信を行う。
 
@@ -671,7 +671,7 @@ Dockerのネットワークを設定して、コンテナ間の通信を行う�
    docker run -d --name コンテナ名 --network ネットワーク名 イメージ名
    ```
 
-# 7.8 Dockerのボリューム設定
+### 7.8 Dockerのボリューム設定
 
 データの永続化のために、Dockerボリュームを使用する。
 
